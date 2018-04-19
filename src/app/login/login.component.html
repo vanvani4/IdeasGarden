@@ -1,7 +1,7 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" class="login-form" novalidate>
 
   <mat-form-field>
-    <input matInput placeholder="Email" formControlName="login" type="email">
+    <input matInput placeholder="Email" formControlName="login" type="email" autofocus>
   </mat-form-field>
 
   <mat-error *ngIf="formErrors.login">
@@ -16,6 +16,13 @@
     {{formErrors.password}}
   </mat-error>
 
-  <button mat-raised-button color="primary" [disabled]="loginForm.invalid">Sign in</button>
+  <mat-checkbox>To stay logged!</mat-checkbox>
+
+  <button mat-raised-button color="primary" class="submit-btn" [disabled]="loginForm.invalid">Sign in</button>
+
+  <div class="links">
+    <a routerLink=".">Forgot your password?</a>
+    <a routerLink=".">Register</a>
+  </div>
 
 </form>
