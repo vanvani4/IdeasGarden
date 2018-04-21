@@ -24,7 +24,6 @@ export class SearchIdeaComponent implements OnInit {
   search(searchForm: FormGroup) {
     this.ser = searchForm.value.search;
     console.log(this.ser);
-    
   }
 
 }

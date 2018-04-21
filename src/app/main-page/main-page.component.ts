@@ -8,12 +8,11 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  
   searchForm: FormGroup;
   show = true;
   ser: string;
 
-  constructor(private fb: FormBuilder,  private router: Router, private activedRoute: ActivatedRoute) { }
+  constructor(private fb: FormBuilder, private router: Router, private activedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.searchForm = this.fb.group({
@@ -24,7 +23,6 @@ export class MainPageComponent implements OnInit {
   search(searchForm: FormGroup) {
     this.ser = searchForm.value.search;
     console.log(this.ser);
-    
   }
 
 }
