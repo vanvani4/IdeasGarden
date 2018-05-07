@@ -1,43 +1,43 @@
 <mat-toolbar color="primary">
   <img src="assets/image/logo.jpg">
   <span class="spacer"></span>
-  <span class="navigation">Home</span>
-  <span class="navigation">Grow a new idea</span>
-  <span class="navigation">My garden of ideas</span>
-  <span class="navigation">To leave the garden</span>
-  <!-- <ul>
-    <li class="navigation">
-        <a href="#">Home</a>
-    </li>
 
-    <li class="navigation">
-      <a mat-colors="color: white" href="#">Grow a new idea</a>
-    </li>
+  <app-search-idea class="navigation"></app-search-idea>
 
-    <li class="navigation">
-      <a href="#">My garden of ideas</a>
-    </li>
-
-    <li class="navigation">
-      <a href="#">To leave the garden</a>
-    </li>
-  </ul> -->
+  <a routerLink="/admin">
+    <span class="navigation">Home</span>
+  </a>
+  <a routerLink="/admin">
+    <span class="navigation">Grow a new idea</span>
+  </a>
+  <a routerLink="/admin">
+    <span class="navigation">My garden of ideas</span>
+  </a>
+  <a routerLink="/admin">
+    <span class="navigation">Sign up</span>
+  </a>
+  <span>/</span>
+  <a routerLink="/login">
+    <span class="navigation">Sign in</span>
+  </a>
 
 </mat-toolbar>
 
-<div class="search">
-  <app-search-idea></app-search-idea>
-</div>
-
+<mat-grid-list cols="3" rowHeight="6:3">
+  <mat-grid-tile *ngFor="let idea of topIdeas" (mouseenter)="mouseenter=idea" (mouseleave)="mouseenter=false">
+    <img class="img" src='{{idea.picture}}'>
+    <mat-grid-tile-footer *ngIf="mouseenter===idea">{{idea.name}}
+      <br />{{idea.description}}</mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
 
 <mat-card>
   <mat-card-content>
-    <!-- <h2 class="example-h2">Tabs with text labels</h2> -->
     <mat-tab-group class="demo-tab-group">
       <mat-tab label="Hot ideas">
         <div class="demo-tab-content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
-            vulputate. Etiam conse
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis
+          vulputate. Etiam conse
         </div>
       </mat-tab>
       <mat-tab label="Recommended for you">
@@ -67,9 +67,10 @@
       <mat-tab label="Tab 5">
         No content
       </mat-tab>
-      <mat-tab label="Tab 6">
-        No content
-      </mat-tab>
     </mat-tab-group>
   </mat-card-content>
 </mat-card>
+<!-- 
+<div class="search">
+  <app-search-idea></app-search-idea>
+</div> -->

@@ -41,7 +41,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatTabsModule,
     MatCardModule,
     MatCheckboxModule
-  ]
+  ],
   declarations: []
 })
 export class MaterialModule { }

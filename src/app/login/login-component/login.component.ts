@@ -3,6 +3,9 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { log } from 'util';
 import { Router } from '@angular/router';
 
+import { User } from '../../models/user';
+import { AuthGuardService } from '../../guard/auth-guard.service'
+
 // import { trigger, state, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
 
 @Component({
@@ -28,6 +31,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
+  user: User;
   loginForm: FormGroup;
   state = 'small';
 
@@ -47,7 +51,7 @@ export class LoginComponent implements OnInit {
       minlength: 'Password must be at least 8 characters long'
     }
   };
-  constructor(private fb: FormBuilder, private router: Router) { }
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthGuardService) { }
 
   ngOnInit() {
     // this.animateMe();
@@ -72,13 +76,21 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: FormGroup) {
-    console.log(form.valid);
-    console.log(form.value);
-    console.log(form.pristine);
+    this.authService.login(this.loginForm.value.login, this.loginForm.value.password)
+    .subscribe(
+      data => {
+        this.router.navigate(['main']);
+      }
+    );
+    // console.log(form.valid);
+    // console.log(form.value);
+    // console.log(form.pristine);
     // this.router.navigate(['main']);
   }
   // animateMe() {
   //   this.state = (this.state === 'small' ? 'large' : 'small');
   // }
+
+  
 
 }

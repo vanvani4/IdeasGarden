@@ -1,0 +1,49 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.navigation {
+  display: inline;
+  padding: 0 14px;
+}
+
+.search-input {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  outline: none;
+  box-shadow: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  position	: relative;
+}
+
+span {
+  color: white;
+}
+
+.idea {
+  position: absolute;
+	top: inherit;
+  width: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.5); /* Цвет фона */
+  /* opacity: 0.5; */
+  font: bold 24px/45px Helvetica, Sans-Serif;
+}
+
+
+.demo-tab-content {
+  padding: 16px;
+}
+
+
