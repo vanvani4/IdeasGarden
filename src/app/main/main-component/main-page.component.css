@@ -31,19 +31,11 @@ span {
   color: white;
 }
 
-.idea {
+/* .idea {
   position: absolute;
 	top: inherit;
   width: 100%;
   color: white;
-  background: rgba(0, 0, 0, 0.5); /* Цвет фона */
-  /* opacity: 0.5; */
+  background: rgba(0, 0, 0, 0.5);
   font: bold 24px/45px Helvetica, Sans-Serif;
-}
-
-
-.demo-tab-content {
-  padding: 16px;
-}
-
-
+} */

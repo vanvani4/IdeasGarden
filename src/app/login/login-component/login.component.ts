@@ -90,7 +90,4 @@ export class LoginComponent implements OnInit {
   // animateMe() {
   //   this.state = (this.state === 'small' ? 'large' : 'small');
   // }
-
-  
-
 }

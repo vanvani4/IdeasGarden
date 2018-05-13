@@ -12,7 +12,9 @@ import { AuthGuardService } from './guard/auth-guard.service';
 import { AdminGuard } from './guard/admin.guard';
 import { AdminModule } from './admin/admin.module';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginModule } from './login/login.module'
+import { LoginModule } from './login/login.module';
+import { AboutIdeaModule } from './about-idea/about-idea.module';
+import { CreateIdeaModule } from './create-idea/create-idea.module'
 
 
 
@@ -32,9 +34,11 @@ const appRoutes: Routes = [
     MaterialModule,
     HttpClientModule,
     MainPageModule,
-    AdminModule
+    AdminModule,
+    AboutIdeaModule,
+    CreateIdeaModule
   ],
-  providers: [AuthenticationGuard, AuthGuardService, AdminGuard, JwtHelperService],
+  providers: [AuthenticationGuard, AuthGuardService, AdminGuard, /*JwtHelperService*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,13 @@
+<mat-grid-list cols="3" rowHeight="6:3">
+  <mat-grid-tile *ngFor="let idea of recomIdeas">
+    <a href="/idea/{{idea.id}}">
+      <img class="img" src='{{idea.picture}}'>
+      <mat-grid-tile-footer class="footer">
+        <ul>
+          <li class="idea-name">{{idea.name}}</li>
+          <li class="idea-description">{{idea.description}}</li>
+        </ul>
+      </mat-grid-tile-footer>
+    </a>
+  </mat-grid-tile>
+</mat-grid-list>

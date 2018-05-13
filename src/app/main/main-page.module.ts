@@ -6,7 +6,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { MainPageComponent } from './main-component/main-page.component';
 import { SearchIdeaComponent } from './search-idea/search-idea.component';
-import { MainPageService } from './main-service/main-page.service'
+import { MainPageService } from './main-service/main-page.service';
+import { TabsIdeasComponent } from './tabs-ideas/tabs-ideas.component';
+import { TopTabComponent } from './tabs-ideas/top-tab/top-tab.component';
+import { RecommendedTabComponent } from './tabs-ideas/recommended-tab/recommended-tab.component';
+import { NewIdeasTabComponent } from './tabs-ideas/new-ideas-tab/new-ideas-tab.component';
 
 @NgModule({
   imports: [
@@ -17,7 +21,11 @@ import { MainPageService } from './main-service/main-page.service'
   ],
   declarations: [
     MainPageComponent,
-    SearchIdeaComponent
+    SearchIdeaComponent,
+    TabsIdeasComponent,
+    TopTabComponent,
+    RecommendedTabComponent,
+    NewIdeasTabComponent
   ],
   providers: [MainPageService]
 })

@@ -1,0 +1,29 @@
+.img {
+    width: 100%;
+    height: 50%;
+    position	: relative;
+    margin-bottom: 5px;
+}
+
+.footer {
+    color: black;
+    background-color: white;
+}
+
+ul {
+    margin: 3px;
+}
+
+li {
+    list-style-type: none;
+    margin: 3px;
+}
+
+.idea-name {
+    font: 200% serif;
+}
+
+.idea-description {
+    font: 12pt sans-serif; 
+    display: inline-block;
+}
