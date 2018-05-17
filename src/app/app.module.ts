@@ -14,7 +14,9 @@ import { AdminModule } from './admin/admin.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './login/login.module';
 import { AboutIdeaModule } from './about-idea/about-idea.module';
-import { CreateIdeaModule } from './create-idea/create-idea.module'
+import { CreateIdeaModule } from './create-idea/create-idea.module';
+import { UserProfileModule } from './user/user-profile.module'
+import { UserService } from './user/user-service/user.service';
 
 
 
@@ -36,9 +38,10 @@ const appRoutes: Routes = [
     MainPageModule,
     AdminModule,
     AboutIdeaModule,
-    CreateIdeaModule
+    CreateIdeaModule,
+    UserProfileModule
   ],
-  providers: [AuthenticationGuard, AuthGuardService, AdminGuard, /*JwtHelperService*/],
+  providers: [AuthenticationGuard, AuthGuardService, AdminGuard, UserService, /*JwtHelperService*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

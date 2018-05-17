@@ -5,6 +5,7 @@
 .navigation {
   display: inline;
   padding: 0 14px;
+  color: white;
 }
 
 .search-input {
@@ -27,9 +28,19 @@ a {
   position	: relative;
 }
 
-span {
-  color: white;
+.mat-grid-tile .mat-grid-tile-header {
+  background: rgba(0,0,0,.0);
+  justify-content: flex-end;
+  color: red;
 }
+
+/* .mat-icon { 
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 24px;
+} */
 
 /* .idea {
   position: absolute;

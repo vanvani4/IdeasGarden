@@ -7,10 +7,10 @@
   <a routerLink="/">
     <span class="navigation">Home</span>
   </a>
-  <a routerLink="/admin">
+  <a routerLink="/create">
     <span class="navigation">Grow a new idea</span>
   </a>
-  <a routerLink="/admin">
+  <a routerLink="/name">
     <span class="navigation">My garden of ideas</span>
   </a>
   <a routerLink="/admin">
@@ -27,6 +27,11 @@
   <mat-grid-tile *ngFor="let idea of topIdeas" (mouseenter)="mouseenter=idea" (mouseleave)="mouseenter=false">
     <a href="/idea/{{idea.id}}">
       <img class="img" src='{{idea.picture}}'>
+      <mat-grid-tile-header class="header">
+          <button mat-button mat-icon-button arial-label (click)="like(idea.id)" class="search-btn">
+            <mat-icon>{{idea.favorIcon}}</mat-icon>
+          </button>
+        </mat-grid-tile-header> 
       <mat-grid-tile-footer *ngIf="mouseenter===idea">{{idea.name}}
         <br />{{idea.description}}</mat-grid-tile-footer>
     </a>
