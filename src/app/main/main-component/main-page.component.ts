@@ -10,7 +10,8 @@ import { User } from '../../models/user';
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  styleUrls: ['./main-page.component.css'],
+  providers: [MainPageService, UserService]
 })
 export class MainPageComponent implements OnInit {
 

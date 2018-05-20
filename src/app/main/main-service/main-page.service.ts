@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { User } from '../../models/user';
 import { Idea } from '../../models/idea';
+import { UserService } from '../../user/user-service/user.service';
 
 @Injectable()
 export class MainPageService {
@@ -62,7 +63,6 @@ export class MainPageService {
       id: 8,
       name: 'Bus',
       description: 'big',
-      // tslint:disable-next-line:max-line-length
       picture: 'https://cdn.vox-cdn.com/thumbor/ratuHD94xaVpChadADOS5oooCkE=/0x0:2362x1771/1200x800/filters:focal(993x698:1369x1074)/cdn.vox-cdn.com/uploads/chorus_image/image/55049115/ELEC_CITY.0.jpg',
       favorIcon: 'favorite_border'
     },
@@ -100,7 +100,6 @@ export class MainPageService {
       id: 13,
       name: 'Bus',
       description: 'big',
-      // tslint:disable-next-line:max-line-length
       picture: 'https://cdn.vox-cdn.com/thumbor/ratuHD94xaVpChadADOS5oooCkE=/0x0:2362x1771/1200x800/filters:focal(993x698:1369x1074)/cdn.vox-cdn.com/uploads/chorus_image/image/55049115/ELEC_CITY.0.jpg',
       favorIcon: 'favorite_border'
     },
@@ -141,7 +140,7 @@ export class MainPageService {
     }];
 
 
-  constructor() { }
+  constructor(userService: UserService) { }
 
   getTopIdeas() {
     return this.topIdeas;
@@ -154,5 +153,26 @@ export class MainPageService {
   getNewIdeas() {
     return this.newIdeas;
   }
+
+  // like(id: number) {
+  //   const arr = this.user
+  //   const serId: number = arr.indexOf(id);
+  //   if (serId === -1) {
+  //     this.userService.user.favoriteIdeas.push(id);
+  //     for (let idea of this.topIdeas) {
+  //       if (idea.id === id) {
+  //         idea.favorIcon = 'favorite';
+  //       }
+  //     }
+  //   } else {
+  //     this.userService.user.favoriteIdeas.splice(serId, 1);
+  //     for (let idea of this.topIdeas) {
+  //       if (idea.id === id) {
+  //         idea.favorIcon = 'favorite_border';
+  //       }
+  //     }
+  //   }
+  //   return false;
+  // }
 
 }

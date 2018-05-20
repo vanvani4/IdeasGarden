@@ -11,6 +11,7 @@ import { TabsIdeasComponent } from './tabs-ideas/tabs-ideas.component';
 import { TopTabComponent } from './tabs-ideas/top-tab/top-tab.component';
 import { RecommendedTabComponent } from './tabs-ideas/recommended-tab/recommended-tab.component';
 import { NewIdeasTabComponent } from './tabs-ideas/new-ideas-tab/new-ideas-tab.component';
+import { UserService } from '../user/user-service/user.service';
 
 @NgModule({
   imports: [
@@ -27,6 +28,6 @@ import { NewIdeasTabComponent } from './tabs-ideas/new-ideas-tab/new-ideas-tab.c
     RecommendedTabComponent,
     NewIdeasTabComponent
   ],
-  providers: [MainPageService]
+  providers: [MainPageService, UserService]
 })
 export class MainPageModule { }
