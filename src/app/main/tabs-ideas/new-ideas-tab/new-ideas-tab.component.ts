@@ -19,4 +19,9 @@ export class NewIdeasTabComponent implements OnInit {
     this.newIdeas = this.mainPageService.getNewIdeas();
   }
 
+  like(id: number) {
+    this.mainPageService.likeNew(id);
+    return false;
+  }
+
 }

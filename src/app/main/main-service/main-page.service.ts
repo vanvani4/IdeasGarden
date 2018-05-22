@@ -140,7 +140,7 @@ export class MainPageService {
     }];
 
 
-  constructor(userService: UserService) { }
+  constructor(private userService: UserService) { }
 
   getTopIdeas() {
     return this.topIdeas;
@@ -154,25 +154,63 @@ export class MainPageService {
     return this.newIdeas;
   }
 
-  // like(id: number) {
-  //   const arr = this.user
-  //   const serId: number = arr.indexOf(id);
-  //   if (serId === -1) {
-  //     this.userService.user.favoriteIdeas.push(id);
-  //     for (let idea of this.topIdeas) {
-  //       if (idea.id === id) {
-  //         idea.favorIcon = 'favorite';
-  //       }
-  //     }
-  //   } else {
-  //     this.userService.user.favoriteIdeas.splice(serId, 1);
-  //     for (let idea of this.topIdeas) {
-  //       if (idea.id === id) {
-  //         idea.favorIcon = 'favorite_border';
-  //       }
-  //     }
-  //   }
-  //   return false;
-  // }
+  likeTop(id: number) {
+    const arr = this.userService.getUser().favoriteIdeas;
+    const serId: number = arr.indexOf(id);
+    if (serId === -1) {
+      this.userService.addFavoriteIdea(id);
+      for (let idea of this.topIdeas) {
+        if (idea.id === id) {
+          idea.favorIcon = 'favorite';
+        }
+      }
+    } else {
+      this.userService.delFavoriteIdea(serId);
+      for (let idea of this.topIdeas) {
+        if (idea.id === id) {
+          idea.favorIcon = 'favorite_border';
+        }
+      }
+    }
+  }
 
+  likeRecommended(id: number) {
+    const arr = this.userService.getUser().favoriteIdeas;
+    const serId: number = arr.indexOf(id);
+    if (serId === -1) {
+      this.userService.addFavoriteIdea(id);
+      for (let idea of this.recomIdeas) {
+        if (idea.id === id) {
+          idea.favorIcon = 'favorite';
+        }
+      }
+    } else {
+      this.userService.delFavoriteIdea(serId);
+      for (let idea of this.recomIdeas) {
+        if (idea.id === id) {
+          idea.favorIcon = 'favorite_border';
+        }
+      }
+    }
+  }
+
+  likeNew(id: number) {
+    const arr = this.userService.getUser().favoriteIdeas;
+    const serId: number = arr.indexOf(id);
+    if (serId === -1) {
+      this.userService.addFavoriteIdea(id);
+      for (let idea of this.newIdeas) {
+        if (idea.id === id) {
+          idea.favorIcon = 'favorite';
+        }
+      }
+    } else {
+      this.userService.delFavoriteIdea(serId);
+      for (let idea of this.newIdeas) {
+        if (idea.id === id) {
+          idea.favorIcon = 'favorite_border';
+        }
+      }
+    }
+  }
 }

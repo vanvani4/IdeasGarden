@@ -16,7 +16,9 @@ import { User } from '../../models/user';
 export class MainPageComponent implements OnInit {
 
   topIdeas: Idea[];
-  mouseenter;
+  recomIdeas: Idea[];
+  newIdeas: Idea[];
+  mouseenter: any;
   currentUser: User;
 
   constructor(private router: Router,
@@ -29,7 +31,11 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
     this.topIdeas = this.mainPageService.getTopIdeas();
     this.currentUser = this.userService.getUser(); // временно, дальше user с localStorage.getItem('currentUser'))
-    this.likedIdeas();
+    this.recomIdeas = this.mainPageService.getRecomIdeas();
+    this.newIdeas = this.mainPageService.getNewIdeas();
+    this.likedTopIdeas();
+    this.likedRecommendedIdeas();
+    this.likedNewIdeas();
   }
 
   search(sear) {
@@ -37,29 +43,31 @@ export class MainPageComponent implements OnInit {
   }
 
   like(id: number) {
-    const arr = this.currentUser.favoriteIdeas;
-    const serId: number = arr.indexOf(id);
-    if (serId === -1) {
-      this.currentUser.favoriteIdeas.push(id);
-      for (let idea of this.topIdeas) {
-        if (idea.id === id) {
-          idea.favorIcon = 'favorite';
-        }
-      }
-    } else {
-      this.currentUser.favoriteIdeas.splice(serId, 1);
-      for (let idea of this.topIdeas) {
-        if (idea.id === id) {
-          idea.favorIcon = 'favorite_border';
-        }
-      }
-    }
+    this.mainPageService.likeTop(id);
     return false;
   }
 
-  likedIdeas() {
+  likedTopIdeas() {
     const favIdeasUser: number[] = this.currentUser.favoriteIdeas;
     for (let idea of this.topIdeas) {
+      if (favIdeasUser.indexOf(idea.id) !== -1) {
+        idea.favorIcon = 'favorite';
+      }
+    }
+  }
+
+  likedRecommendedIdeas() {
+    const favIdeasUser: number[] = this.currentUser.favoriteIdeas;
+    for (let idea of this.recomIdeas) {
+      if (favIdeasUser.indexOf(idea.id) !== -1) {
+        idea.favorIcon = 'favorite';
+      }
+    }
+  }
+
+  likedNewIdeas() {
+    const favIdeasUser: number[] = this.currentUser.favoriteIdeas;
+    for (let idea of this.newIdeas) {
       if (favIdeasUser.indexOf(idea.id) !== -1) {
         idea.favorIcon = 'favorite';
       }

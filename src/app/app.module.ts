@@ -17,6 +17,7 @@ import { AboutIdeaModule } from './about-idea/about-idea.module';
 import { CreateIdeaModule } from './create-idea/create-idea.module';
 import { UserProfileModule } from './user/user-profile.module'
 import { UserService } from './user/user-service/user.service';
+import { MainPageService } from './main/main-service/main-page.service'
 
 
 
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
     CreateIdeaModule,
     UserProfileModule
   ],
-  providers: [AuthenticationGuard, AuthGuardService, AdminGuard, UserService, /*JwtHelperService*/],
+  providers: [AuthenticationGuard, AuthGuardService, AdminGuard, UserService, MainPageService /*JwtHelperService*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,4 +19,9 @@ export class RecommendedTabComponent implements OnInit {
   ngOnInit() {
     this.recomIdeas = this.mainPageService.getRecomIdeas();
   }
+
+  like(id: number) {
+    this.mainPageService.likeRecommended(id);
+    return false;
+  }
 }

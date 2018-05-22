@@ -31,7 +31,7 @@
           <button mat-button mat-icon-button arial-label (click)="like(idea.id)" class="search-btn">
             <mat-icon>{{idea.favorIcon}}</mat-icon>
           </button>
-        </mat-grid-tile-header> 
+      </mat-grid-tile-header> 
       <mat-grid-tile-footer *ngIf="mouseenter===idea">{{idea.name}}
         <br />{{idea.description}}</mat-grid-tile-footer>
     </a>

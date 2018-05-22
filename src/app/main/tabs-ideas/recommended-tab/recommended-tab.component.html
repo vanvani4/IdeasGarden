@@ -2,6 +2,11 @@
   <mat-grid-tile *ngFor="let idea of recomIdeas">
     <a href="/idea/{{idea.id}}">
       <img class="img" src='{{idea.picture}}'>
+      <mat-grid-tile-header class="header">
+        <button mat-button mat-icon-button arial-label (click)="like(idea.id)" class="search-btn">
+          <mat-icon>{{idea.favorIcon}}</mat-icon>
+        </button>
+      </mat-grid-tile-header>
       <mat-grid-tile-footer class="footer">
         <ul>
           <li class="idea-name">{{idea.name}}</li>

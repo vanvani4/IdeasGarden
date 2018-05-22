@@ -20,4 +20,9 @@ export class TopTabComponent implements OnInit {
     this.topIdeas = this.mainPageService.getTopIdeas();
   }
 
+  like(id: number) {
+    this.mainPageService.likeTop(id)
+    return false;
+  }
+
 }
